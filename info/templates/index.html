@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'edata/index.css' %}">
+<br><br><br>
+<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-2" data-slide-to="1"></li>
+    <li data-target="#carousel-example-2" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+  <!--Slides-->
+
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <div class="view">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+          alt="First slide">
+        <div class="mask rgba-black-light"></div>
+      </div>
+      <div class="carousel-caption">
+
+        {% if user.is_authenticated %}
+
+        <h3>Welcome Mr. {{user.username}}</h3><br>
+
+        <h3>DataLancer</h3><br>
+
+        <p>At Datalancer you are guaranteed best in global training as we team up the most efficient, professional and dedicated trainers who are subject matter experts in their respective area of specialization.</p>
+<!--Carousel Wrapper-->
+      </div>
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+          alt="Second slide">
+        <div class="mask rgba-black-strong"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3>Welcome Mr. {{user.username}}</h3><br>
+        <h3>Our Vision</h3><br>
+        <p>Endeavor to be the number one Training provider locally and globally offering the most comprehensive and market relevant programs to students helping them boost up there career Growth. Set bench marks for high quality and affordable training programs for all latest and future ready technologies.</p>
+
+      </div>
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+          alt="Third slide">
+        <div class="mask rgba-black-slight"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3>Welcome Mr. {{user.username}}</h3><br>
+        <h3>Our Mission</h3>
+        <p>To provide best quality training to each individual to meeting their specific requirements To empower Students with future ready technologies for a better and fulfilling career in IT industry.</p>
+      </div>
+    </div>
+  </div>
+  <!--/.Slides-->
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+{% endif %}  <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+<div class="container my-5 py-5 z-depth-2">
+  <div class="row">
+  <div class="col-12 col-md-11">
+    <button type="button" class="btn btn-outline-danger waves-effect">Latest Blog Posts <span class="badge badge-danger ml-2">{{allblog.count}} + </span></button>
+    <!-- Blog Entries Column -->
+       <div class="col-md-11 mt-3 left">
+           {% for post in post_list %}
+           <div class="card mb-4">
+               <div class="card-body">
+                   <a href="{% url 'post_detail' post.slug  %}"><h2 class="card-title">{{ post.title }}</h2></a>
+                   <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                   <p class="card-text">{{post.content | slice:":395" }}</p>
+                   <a href="{% url 'post_detail' post.slug  %}"<button type="button" class="btn btn-outline-default waves-effect">Read More &rarr;</button></a>
+               </div>
+           </div>
+           {% endfor %}
+         </div>
+</div>
+</div>
+<a href="{% url 'blogpost' %}"><button type="button" class="btn btn-outline-danger waves-effect">See All Posts </button></a>
+<h3>Boost your career with DataLancer. Quality Guaranteed</h3> <br>
+  <!--Section: Content-->
+  <section class="px-md-5 mx-md-5 dark-grey-text text-center">
+    <!--Grid row-->
+    <div class="row d-flex justify-content-center">
+
+      <!--Grid column-->
+      <div class="col-lg-10">
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--First column-->
+          <div class="col-md-3 col-6 md-4">
+            <i class="fa fa-desktop fa-3x blue-text"></i><br>
+            Online Classes
+          </div>
+          <!--/First column-->
+
+          <!--Second column-->
+          <div class="col-md-3 col-6 mb-4">
+            <i class="fas fa-code fa-3x teal-text"></i><br>
+            Practical Work
+          </div>
+          <!--/Second column-->
+
+          <!--Third column-->
+          <div class="col-md-3 col-6 mb-4">
+            <i class="fas fa-users fa-3x indigo-text"></i><br>
+            Experienced Faculty
+          </div>
+          <!--/Third column-->
+
+          <!--Fourth column-->
+          <div class="col-md-3 col-6 mb-4">
+            <i class="fas fa-cloud-upload-alt fa-3x deep-purple-text"></i><br>
+             Free Study Material
+          </div>
+          <!--/Fourth column-->
+
+        </div>
+        <!--/Grid row-->
+
+        <h3>Learn from industry experts</h3><br>
+        <p>Our real-time professionals helps you to learn any new technology in ease manner.</p><br>
+        <h3>Flexible Timings</h3><br>
+        <p>Learn anytime from anywhere. Utilize your free time to learn new technology with our experts.</p>
+
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+    <h3>24/7 Support</h3><br>
+    <p>No matter what your current issue is, we have team ready to help immediately.</p><br>
+  </section>
+  <!--Section: Content-->
+</div>
+{% endblock %}

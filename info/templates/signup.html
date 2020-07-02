@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% load static %}
+<title>DataLancer SignUp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="keywords" content="effective register form Widget a Flat Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<link rel="stylesheet" href="{% static '2/css/style.css'%}" type="text/css" media="all" /><!-- Style-CSS -->
+<link rel="stylesheet" href="{% static '2/css/font-awesome.min.css' %}" type="text/css" media="all" />
+<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Expletus+Sans" rel="stylesheet">
+</head>
+<body>
+<section class="agile-main">
+	<header><h1>Data<label>Lancer</label> Sign Up</h1></header>
+	<div class="agile-top">
+	<!--728x90-->
+		<form action="{% url 'Signup' %}" method="POST">
+			{% csrf_token %}
+			<div class="agile-user">
+				<p>name</p>
+				<span><i class="fa fa-user" aria-hidden="true"></i></span>
+				<input type="text" name="name" placeholder="enter your name" required="">
+				<div class="clear"></div>
+			</div>
+			<div class="agile-username">
+				<p>username</p>
+				<span><i class="fa fa-users" aria-hidden="true"></i></span>
+				<input type="text" name="username" placeholder="enter your username" required="">
+				<div class="clear"></div>
+			</div>
+			<div class="agile-email">
+			<!--728x90-->
+				<p>email</p>
+				<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+				<input type="email" name="email" placeholder="enter your email" required="">
+				<div class="clear"></div>
+			</div>
+			<div class="agile-password">
+				<p>password</p>
+				<span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+				<input type="password" name="password" placeholder="enter your password" required="">
+				<div class="clear"></div>
+			</div>
+			<div class="agile-cpassword">
+			<!--728x90-->
+				<p>confirm password</p>
+				<span><i class="fa fa-lock" aria-hidden="true"></i></span>
+				<input type="password" name="password1" placeholder="confirm your password" required="">
+				<div class="clear"></div>
+			</div>
+			<button type="submit" value="submit" name="submit"></button>
+		</form>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+	<footer>&copy; 2020 DataLancer Register Form. All Rights Reserved | Design by Navneet</footer>
+</section>
+</body>
+</html>

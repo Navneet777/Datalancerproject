@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="edata/training.css">
+<br><br><br>
+<!--Mask with wave-->
+<div class="container">
+  <div class="row">
+    <div class="card col-md-6" id="card">
+
+    <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Enquiry Form</strong>
+    </h5>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+
+        <!-- Form -->
+        <form class="text-center" style="color: #757575;" action="{% url 'Training' %}" method="POST">
+          {% csrf_token %}
+            <!-- Name -->
+            <div class="md-form mt-3">
+
+                <label for="materialContactFormName">Full Name</label>
+                {{form.name}}
+            </div>
+
+            <!-- E-mail -->
+            <div class="md-form">
+
+                <label for="materialContactFormEmail">Course Enquiry</label>
+                {{form.course}}
+            </div>
+
+            <!-- Subject -->
+            <div class="md-form">
+
+                <label for="materialContactPhone">Contact Number</label>
+                {{form.phone}}
+            </div>
+
+            <!--Message-->
+            <div class="md-form">
+                <label for="materialContactFormMessage">City</label>
+                {{form.city}}
+            </div>
+            <!-- Send button -->
+        </form>
+        <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
+        <!-- Form -->
+    </div>
+    </div>
+    <div class="card col-md-6" id="card2">
+      <p>Hello World</p>
+      </div>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br></br>
+
+<div class="container">
+  <h2>STUDENTS DETAILS</h2>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>ADDRESS</th>
+        <th>ENGLISH MARKS</th>
+        <th>SCIENCE MARKS</th>
+        <th>MATHS MARKS</th>
+      </tr>
+    </thead>
+    {% for i in a %}
+    <tbody>
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.english_marks}}</td>
+        <td>{{i.science_marks}}</td>
+        <td>{{i.math_marks}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+
+  </table>
+  {% for i in b %}
+  <p>{{i.name}}</p><br>
+  <p>{{i.english_marks}}</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<br><br><br>
+<!-- Card group -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'edata/course.css' %}">
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-primary">
+  <span class="navbar-brand mb-0 h1"><div class="class="trndnav">
+<h4>Tranding Courses</h4>
+  </div></span>
+</nav>
+<div class="card-group">
+{% for i in trndcourse %}
+  <!-- Card -->
+  <div class="card mb-4">
+
+    <!-- Card image -->
+    <div class="view overlay">
+      <img class="card-img-top" src="{{media_url}}{{i.course_img}}"
+        alt="{{i.course_img}}" height="170px" width="50px">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!-- Card content -->
+    <div class="card-body">
+
+      <!-- Title -->
+      <h4 class="card-title">{{i.course_name}}</h4>
+      <!-- Text -->
+      <i class="fa fa-clock-o" aria-hidden="true"> {{i.duration}} Hrs</i><br>
+      <i class="fa fa-rupee" style="font-size:24px"> {{i.price}}</i><br>
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <button type="button" class="btn btn-primary btn-md">know more</button>
+
+    </div>
+    <!-- Card content -->
+
+  </div>
+{% endfor %}
+  <!-- Card -->
+</div>
+
+<div class="card-group">
+{% for i in webcourse %}
+  <!-- Card -->
+  <div class="card mb-4">
+
+    <!-- Card image -->
+    <div class="view overlay">
+      <img class="card-img-top" src="{{media_url}}{{i.course_img}}"
+        alt="{{i.course_img}}" height="170px" width="50px">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!-- Card content -->
+    <div class="card-body">
+
+      <!-- Title -->
+      <h4 class="card-title">{{i.course_name}}</h4>
+      <!-- Text -->
+      <i class="fa fa-clock-o" aria-hidden="true"> {{i.duration}} Hrs</i><br>
+      <i class="fa fa-rupee" style="font-size:24px"> {{i.price}}</i><br>
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <button type="button" class="btn btn-primary btn-md">know more</button>
+
+    </div>
+    <!-- Card content -->
+
+  </div>
+{% endfor %}
+  <!-- Card -->
+</div>
+{% endblock %}

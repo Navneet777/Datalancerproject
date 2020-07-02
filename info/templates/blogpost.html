@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br><br>
+<div class="container">
+  <div class="col-12 col-md-11">
+  <a href="#"><button type="button" class="btn btn-outline-danger waves-effect"> Blog Posts <span class="badge badge-danger ml-2"> {{allblog.count}} </span></button></a>
+    <!-- Blog Entries Column -->
+       <div class="col-md-12 mt-3 left">
+           {% for post in allblog %}
+           <div class="card mb-6">
+               <div class="card-body">
+                   <a href="{% url 'post_detail' post.slug  %}"><h2 class="card-title">{{ post.title }}</h2></a>
+                   <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                   <p class="card-text">{{post.content|slice:":200" }}</p>
+                   <a href="{% url 'post_detail' post.slug  %}"<button type="button" class="btn btn-outline-warning waves-effect">Read More &rarr;</button></a>
+               </div>
+           </div>
+           {% endfor %}
+        </div>
+</div>
+</div>
+{% endblock %}
